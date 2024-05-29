@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/slackline-assessment/static/css/main.0a6b40a5.css",
+    "main.css": "/slackline-assessment/static/css/main.196c9a50.css",
     "main.js": "/slackline-assessment/static/js/main.abe40f9b.js",
     "index.html": "/slackline-assessment/index.html",
-    "main.0a6b40a5.css.map": "/slackline-assessment/static/css/main.0a6b40a5.css.map",
+    "main.196c9a50.css.map": "/slackline-assessment/static/css/main.196c9a50.css.map",
     "main.abe40f9b.js.map": "/slackline-assessment/static/js/main.abe40f9b.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a6b40a5.css",
+    "static/css/main.196c9a50.css",
     "static/js/main.abe40f9b.js"
   ]
 }
