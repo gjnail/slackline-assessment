@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+/* Reset some default browser styles */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling on the body */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header styling */
+.header {
+  background-color: #0a1f44;
+  padding: 10px; /* Adjust padding as needed */
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.header .logo {
+  height: 50px;
+  width: 50px;
+  object-fit: fill; /* Ensure the image scales correctly */
+  background-size: 200%; /* Double the size to make it easier to clip */
+}
+/* Card styling */
+.card {
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+}
+
+/* Chart sorting controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sort-controls, .toggle-controls {
+  display: flex;
+  align-items: center;
+}
+
+.sort-controls label, .toggle-controls label {
+  margin-right: 10px;
+}
+
+.sort-controls select, .toggle-controls input {
+  margin-right: 5px;
+}
+
+.sortable {
+  cursor: pointer;
+}
+
+.sortable:hover {
+  text-decoration: underline;
+}
+
+/* App styling */
+.App {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.product-card {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto; /* Enable scrolling for the product card */
+}
+
+.product {
+  text-align: center;
+  margin-right: 20px;
+  flex-grow: 1;
+  overflow-y: auto; /* Enable scrolling for product content */
+}
+
+.product img {
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.product .tags {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.product .tag {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto; /* Enable scrolling for main content */
+}
+
+.chart, .table {
+  width: 100%;
+  max-width: 800px;
+}
+
+.table {
+  overflow-x: auto;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f4f4f4;
 }

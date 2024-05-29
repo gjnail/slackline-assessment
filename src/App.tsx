@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setData } from './redux/actions';
+import Header from './components/Header';
+import Product from './components/Product';
+import Chart from './components/Chart';
+import Table from './components/Table';
+import data from './assets/data/stackline_frontend_assessment_data_2021.json';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setData(data));
+  }, [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="content">
+        <div className="card product-card">
+          <Product />
+        </div>
+        <div className="main-content">
+          <div className="card chart-card">
+            <Chart />
+          </div>
+          <div className="card table-card">
+            <Table />
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
